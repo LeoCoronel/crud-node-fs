@@ -67,6 +67,11 @@ const eliminar = (id) => {
 
     if(index !== -1) {
         posts.splice(index, 1)
+        posts.map((e, index) => {
+            posts[index].id = index + 1;
+            return e
+        })
+
         save()
         return true
     }
